@@ -39,8 +39,8 @@ const headers = {
     'Authorization': `Basic ${encodedCredentials}`
 };
 
-// Define a POST endpoint for '/chat'
-router.post('/chat', async (req, res) => {
+// Define a POST endpoint for '/ticket-classifier'
+router.post('/ticket-classifier', async (req, res) => {
     try {
         // Handle the chat request
         const { ticket_id } = trimObjectStrings(req.body);

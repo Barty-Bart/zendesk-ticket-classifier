@@ -4,7 +4,7 @@
 // For additional security:
 // Consider setting up proxy with Cloudflare
 // Consider adding rate limiter
-// Optimise CORS if needed
+// Add CORS if needed
 
 const express = require('express');
 const helmet = require('helmet');
@@ -15,13 +15,6 @@ const appRouter = require('./app'); // Import routes from app.js
 const app = express();
 const port = process.env.PORT || 3000;
 
-// CORS setup
-const corsOptions = {
-    origin: ['https://voiceflow.com', 'https://general-runtime.voiceflow.com'], // add allowed origins
-    methods: 'GET, POST',
-    allowedHeaders: ['Content-Type', 'Authorization']
-};
-
 app.use(cors(corsOptions));
 
 // Middleware to parse JSON bodies
@@ -31,7 +24,7 @@ app.use(express.json());
 app.use(helmet());
 
 // Use the routes defined in app.js under the /api path
-app.use('/api', appRouter); // Ensure appRouter is imported and used as a middleware
+app.use('/webhook', appRouter); // Ensure appRouter is imported and used as a middleware
 
 // Error Handling middleware
 app.use((err, req, res, next) => {
