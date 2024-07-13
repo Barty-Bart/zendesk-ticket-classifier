@@ -4,7 +4,7 @@
 
 This repo is part of a tutorial on creating and deploying a Zendesk GPT agent that classifies tickets. 
 
-Watch the full tutorial here: https://youtu.be/MUX9Dp1PSfw?si=bRco1hz_B5mIdXpT
+Watch the full tutorial here: 
 
 ### To do
 
